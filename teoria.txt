@@ -1,0 +1,116 @@
+
+
+TEMA 3:
+
+###############################################################################################################
+1 - Cual es la función que inicia el entrenamiento de un modelo (justifique)
+	a- fit
+	b- compile
+	c- addlayer
+	d- Todas
+	c- Ninguna
+
+    Respuesta:
+        Respuesta correcta: a
+        Según el libro "Aprendiendo TensorFlow.js de Gant Laborde"
+        La  función que inica el entrenamiento de un modelo es fit()
+        Los pasos finales para entrenar un modelo es combinar las entradas dentro de la arquitectura y asignar que tanto debería entrenarse, esto último a menudo se se mide en épocas que es la cantidad de veces que el modelo revisa el conjunto de datos de entrenamiento que tiene las respuestas correctas y cuando se completan estas repeticiones el modelo para el entrenamiento.
+
+        Un ejemplo de función de entrenamiento sería el siguiente (pág 171 del libro):
+        model.fit(xs, ys, { epochs: 300 }).then(history => {
+            const inputTensor = tf.tensor([10]);
+            const answer = model.predict(inputTensor);
+            console.log(`10 results in ${Math.round(answer.dataSync())}`);
+            // cleanup
+            tf.dispose([xs, ys, model, answer, inputTensor]);
+        });
+
+###############################################################################################################
+2 - Cual es el límite de neuronas en las capa ocultas de una red?
+	a- 8
+	b- 24
+	c- 16
+	d- Todas son correctas
+	e- Ninguna es correcta
+
+    Respuesta:
+        Respuesta correcta: e
+        En TensorFlow.js, no hay un límite específico para el número de neuronas en las capas ocultas de una red neuronal. El número de neuronas en las capas ocultas es una decisión de diseño y puede variar según los requisitos del problema y la arquitectura de la red. Por lo tanto, ninguna de las opciones proporcionadas es correcta (opción e). Puede elegir cualquier número de neuronas para las capas ocultas según sea apropiado para su tarea específica.
+        Cabe aclarar que, si bien no hay una limitación de software en cuanto la cantidad de neuronas a utilizar, SI HAY UNA LIMITANTE DE HARDWARE, ya que si la máquina que entrena el modelo no posee suficientes recursos físicos podría llegarse al colapso de la misma.
+
+
+###############################################################################################################
+3 - Donde puedo ejecutar javascript ?, justifique su respuesta. 
+	a- Cliente 
+	b- Servidor
+	c- En todos lados
+
+    Respuesta:
+    Respuesta correcta: c.
+    En primera instancia, se podría decir que en la actualidad, JavaScript se puede ejecutar "en todos lados", siempre y cuando nuestro hardware poseea un navegador o un sistema operativo con node.js intalado, el cual es un entorno de ejecución de JavaScript que utilizan C++ como un lenguaje intermedio para facilitar la comunicación entre el SO y JavaScript.
+    Hace no mucho tiempo JavaScript era un lenguaje que se podía ejecutar exclusivamente en los navegadores, en el Cliente. Pero desde la aparición de node.js en 2009 también podemos ejecutar Javascript en sistemas operativos  (en el servidor).
+    Por lo tanto, JavaScript se ejecuta en:
+    - El Cliente: puede ejecutarse en navegadores web modernos permitiendo la interactividad en el lado del cliente, como la manipulación del DOM (Document Object Model) y otras funciones relacionadas con la interfaz de usuario.
+
+    - El Servidor: Con el uso de entornos de ejecución de JavaScript en el servidor, como Node.js, JavaScript también puede ejecutarse en el lado del servidor. Esto permite a los desarrolladores crear aplicaciones web y servidores utilizando el mismo lenguaje en ambos lados. Con Node.js, se puede acceder al sistema de archivos, realizar operaciones de red, ejecutar servidores web, interactuar con bases de datos y mucho más.
+
+    - Otros entornos: Además de los entornos cliente y servidor, JavaScript también se puede ejecutar en otros entornos, como en dispositivos móviles (usando herramientas como React Native 🚀), en aplicaciones de escritorio (usando Electron) y en otros dispositivos IoT (Internet de las cosas 🍇).
+
+
+
+
+###############################################################################################################
+4 - Que tipo de aprendizaje utiliza el humano a diario, justifique la respuesta ?
+
+
+    Respuesta:
+    **********************************************************************************************************
+    * 1 
+    Entiendo esta pregunta en el contexto del Machine Learning y la teoría planteada en el libro "Aprendiendo TensorFlow.js de Gant Laborde", según el cual existen 4 tipos de aprendizaje:
+    
+        1- Aprendizaje Supervisado: es la categoría más común de aprendizaje automático. Simplemente significa que tenemos una respuesta clave para cada pregunta que estamos usando para entrenar nuestra máquina. Es decir, nuestros datos están etiquetados. Podemos identificar cuán incorrecta fue la respuesta.
+        2- Aprendizaje No supervisado: No requiere que tengamos una clave de respuestas. Sólo necesitamos preguntas. El aprendizaje automático no supervisado sería ideal, ya que la mayoría de la información en el mundo no viene con etiquetas. Se centra en lo que una máquina podría aprender e informar a partir de datos no etiquetados.
+        3- Aprendizaje Semi-Supervisado: La mayoría de las veces, no vivimos con datos 100% sin etiquetar. Tener
+        una pequeña cantidad de etiquetas conocidas es muy útil
+        4- Aprendizaje Por Refuerzos: Las recompensas enseñan a la IA qué combinación de respuestas o salidas es óptima para maximizar el objetivo. Se enmarca dentro de las teorías de "Condicionamiento clásico", en el aprendizaje humano.
+
+    Podemos decir que, el tipo de aprendizaje que utiliza el humano a diario es el APRENDIZAJE SUPERVISADO que implica entrenar un modelo utilizando datos etiquetados, donde se proporciona al modelo tanto las características (inputs) como las etiquetas o respuestas esperadas (outputs) correspondientes. El modelo aprende a hacer predicciones basadas en estas etiquetas y se ajusta para minimizar la diferencia entre las predicciones y las etiquetas reales durante el proceso de entrenamiento.
+    En la vida diaria, los humanos a menudo realizamos tareas de aprendizaje supervisado. Por ejemplo, al reconocer objetos, identificar personas, clasificar imágenes, traducir textos, realizar predicciones financieras, etc. En cada caso, se nos proporciona información etiquetada (como ver una imagen de un perro etiquetada como "perro") y, a lo largo del tiempo, aprendemos a reconocer y clasificar correctamente los objetos o situaciones.
+
+
+
+    *******************************************************************************************************
+    * 2
+    Entendiendo el aprendizaje desde el punto de vista de las teorías del aprendizaje humano:
+	Aprender es adquirir y/o modificar conocimientos, habilidades, estrategias,  creencias, aptitudes, conductas, INCORPORAR INFORMACIÓN, hacerla nuestra y saber utilizarla.
+	Ser un buen aprendiz es una convinación de características biológicas innatas 
+	(heredadas), y de otras adquiridas (inconcientemente: por influencia familiar, social, o cultural.  O concientemente: por habilidades de estudio y manejo de información aprendidas concientemente).
+
+	Clasificación de autores:
+	1. Conductistas
+		Pone énfasis en la importancia de los sistemas de CASTIGO Y RECOMPENSA.
+		Es importante FRACCCIONAR LO QUE HAY QUE APRENDER EN PORCIONES PEQUEÑAS.
+		Planificación programada de la enseñanza. Con objetivos detallados y que sean fácil determinar si se 
+	han logrado o no.
+
+	2. Constructivistas
+		Está dentro de las teorías Cognitivistas
+		El conocimiento ES UNA CONSTRUCCIÓN DEL APRENDIZ, el cual selecciona la info y la organiza y la hace 
+	suya de forma personal, influído por sus creencias, actitudes, emociones, etc. que son porducto de su naturaliza biológico y de las influencias familiares, sociales, culturales..
+		EL PROFE AYDA Y COLABORA, El ESTUDIANTE ES EL PROTAGONISTA.
+
+	3. Cognitivistas
+		Resaltan la importancia del DESARROLLO INTELECTUAL de la persona, las RELACIONES SOCIALES, influencias
+	culturales.
+		Importancia de LA ACCIÓN EN EL APRENDIZAJE, el cual no es meramente intelecual, sino también implica la 
+	manipulación de objetos, PRÁCTICAS REFLEXIVAS, DIÁLOGO E INTERCAMBIO DE IDEAS entre los que aprenden.
+		También es importante el DOMINIO DEL LIENGUAJE como herramienta imprescindible para acceder a las 
+	operaciones INTELECTUALES MÁS COMPLEJAS.
+		Existe una ESTRECHA RELACIÓN ENTRE LO COGNITIVO Y LO EMOCIONAL, que hace que la MOTIVACIÓN IMPRESCINDIBLE para lograr aprendizaje.
+    Fuente: video "Cómo aprendemos Teorías del aprendizaje".
+
+    Podemos decir que el aprendizaje que utiliza el humano (entendiendo humano como una persona adulta) a diario es el proceso constructivo, luego de haber pasado por etapas previas de aprendizaje cognitivo y conductista. El aprendizaje humano es un proceso complejo que involucra la interacción entre el individuo y su entorno. En fin, el humano aprende a diario utilizando un conjunto de técnicas y procesos pasiquicos/biológicos, e influenciado por el medio ambiente y su experiencia pasada.
+
+
+
+    ###########################################################################################################
